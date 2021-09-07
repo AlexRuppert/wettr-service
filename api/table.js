@@ -1,10 +1,7 @@
-const { Pool } = require('pg')
-const { allowCors } = require('../lib/serverless')
+const { allowCors, getPool } = require('../lib/serverless')
 const { askPassphrase } = require('./../lib/utils')
 
-const pool = new Pool({
-  connectionString: process.env.DB_CONNECTION,
-})
+const pool = getPool()
 
 async function initTable() {
   const query = `
