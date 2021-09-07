@@ -1,13 +1,10 @@
-const { Pool } = require('pg')
 const format = require('pg-format')
-const { allowCors } = require('../lib/serverless')
+const { allowCors, getPool } = require('../lib/serverless')
 const { askPassphrase } = require('./../lib/utils')
 const { getTimes, getBlob, getTimesToUpdate } = require('./../lib/data')
 const { getClouds } = require('./../lib/clouds')
 
-const pool = new Pool({
-  connectionString: process.env.DB_CONNECTION,
-})
+const pool = getPool()
 
 async function cleanupTable() {
   return pool.query(

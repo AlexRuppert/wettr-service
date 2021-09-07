@@ -1,9 +1,6 @@
-const { Pool } = require('pg')
-const { allowCors } = require('../lib/serverless')
+const { allowCors, getPool } = require('../lib/serverless')
 
-const pool = new Pool({
-  connectionString: process.env.DB_CONNECTION,
-})
+const pool = getPool()
 
 async function queryClouds(bounds, onlyNow = false) {
   const coordinates = bounds.split(',').map(num => num | 0)
