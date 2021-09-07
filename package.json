@@ -1,0 +1,11 @@
+{
+  "name": "wettr-service",
+  "version": "1.0.0",
+  "description": "This directory is a brief example of using a Custom Build script that can be deployed with Vercel and zero configuration.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Ruppert",
+  "license": "MIT"
+}
