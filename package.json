@@ -7,5 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alexander Ruppert",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.2",
+    "pako": "^2.0.4",
+    "pg": "^8.7.1",
+    "pg-format": "^1.0.4",
+    "point-in-polygon": "^1.1.0"
+  }
 }
