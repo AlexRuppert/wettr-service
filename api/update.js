@@ -40,6 +40,7 @@ module.exports = allowCors(async (req, res) => {
       )
     )
     res.json({
+      times: timesToUpdate.map(t => t.time),
       result: result.reduce((acc, val) => acc + val.rowCount, 0),
     })
   })
