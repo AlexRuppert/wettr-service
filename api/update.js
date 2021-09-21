@@ -23,7 +23,7 @@ async function insertClouds(timestamp, clouds) {
 }
 
 module.exports = allowCors(async (req, res) => {
-  await askPassphrase(req, res, async () => {
+  //await askPassphrase(req, res, async () => {
     const getDbTimesPromise = getDbTimes()
     cleanupTable()
     const times = getTimes()
@@ -43,5 +43,5 @@ module.exports = allowCors(async (req, res) => {
       times: timesToUpdate.map(t => t.time),
       result: result.reduce((acc, val) => acc + val.rowCount, 0),
     })
-  })
+  //})
 })
