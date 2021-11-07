@@ -11,9 +11,6 @@ async function cleanupTable() {
     `DELETE FROM clouds WHERE "time" < NOW() - INTERVAL '16 min'`
   )
 }
-async function getDbTimes() {
-  return pool.query(`SELECT DISTINCT "time" FROM clouds`)
-}
 async function insertClouds(timestamp, clouds) {
   const query = format(
     'INSERT INTO clouds ("time", lon_bucket, lat_bucket, "data") VALUES %L',
@@ -24,10 +21,9 @@ async function insertClouds(timestamp, clouds) {
 
 module.exports = allowCors(async (req, res) => {
   //await askPassphrase(req, res, async () => {
-    const getDbTimesPromise = getDbTimes()
     cleanupTable()
     const times = getTimes()
-    const timesToUpdate = await getTimesToUpdate(times, await getDbTimesPromise)
+    const timesToUpdate = times
 
     const timeAndBuffer = timesToUpdate.map(({ name, time }) => ({
       time,
