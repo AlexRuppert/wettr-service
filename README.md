@@ -1,19 +1,12 @@
-# Custom Build Example
+# Wettr Service
 
-This directory is a brief example of using a Custom Build script that can be deployed with Vercel and zero configuration.
+The back-end service for the [Wettr](https://github.com/AlexRuppert/wettr) app to store rain radar data.
+It's a [Vercel](https://vercel.com) app and uses open data of [Deuter Wetterdienst](https://www.dwd.de/).
 
-## Deploy Your Own
 
-Deploy your own Custom Built project with Vercel.
+## Build & Deploy
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/custom-build)
+Vercel needs to be installed:
+`npm i -g vercel`
 
-_Live Example: https://custom-build.now-examples.now.sh_
-
-### How We Created This Example
-
-To get started deploying a Custom Built project with Vercel, you can use the [Vercel CLI](https://vercel.com/download) to initialize the project:
-
-```shell
-$ vercel init custom-build
-```
+`vercel`
