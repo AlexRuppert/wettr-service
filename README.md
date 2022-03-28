@@ -9,4 +9,5 @@ It's a [Vercel](https://vercel.com) app and uses open data of [Deuter Wetterdien
 Vercel needs to be installed:
 `npm i -g vercel`
 
+Run it with:
 `vercel`
